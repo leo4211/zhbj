@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import test.liuyang.com.zhbj.MainActivity;
 import test.liuyang.com.zhbj.R;
 import test.liuyang.com.zhbj.base.BasePager;
 import test.liuyang.com.zhbj.base.MyViewPager;
@@ -70,7 +71,6 @@ public class ContentFragment extends  BaseFragment {
                             break;
 
 
-
                         }
 
 
@@ -80,6 +80,31 @@ public class ContentFragment extends  BaseFragment {
 
             }
         });
+
+
+        viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                BasePager pager = list.get(position);
+//                View mRootView = pager.mRootView;
+                pager.initData();
+                MainActivity mainUI= (MainActivity) mActivity;
+                mainUI.sdmenu.position=position;
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
 
         return view;
     }
@@ -97,6 +122,9 @@ public class ContentFragment extends  BaseFragment {
 
 
         viewpager.setAdapter(new MyPagerAdapter());
+
+
+
 
     }
 
@@ -116,7 +144,7 @@ public class ContentFragment extends  BaseFragment {
         public Object instantiateItem(ViewGroup container, int position) {
 
             BasePager pager = list.get(position);
-            pager.initData();
+//            pager.initData();
 
             View view4 = pager.mRootView;
             container.addView(view4);

@@ -22,6 +22,7 @@ public class SlidingMenu extends HorizontalScrollView {
     private  int mMenuRightPadding=100;
     private  int mMenuwidth;
     private  boolean once;
+    public   int position;
     public SlidingMenu(Context context, AttributeSet attrs) {
         super(context, attrs);
 
@@ -31,7 +32,7 @@ public class SlidingMenu extends HorizontalScrollView {
 
         mScreen=metrics.widthPixels;
 
-        mMenuRightPadding= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,50,context.getResources().getDisplayMetrics());
+        mMenuRightPadding= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,100,context.getResources().getDisplayMetrics());
 
 
     }
@@ -73,6 +74,18 @@ public class SlidingMenu extends HorizontalScrollView {
         int action = ev.getAction();
 
         switch (action){
+            case  MotionEvent.ACTION_MOVE:{
+
+                if(position==0||position==4){
+
+                    return true;
+                }else{
+
+                    return super.onTouchEvent(ev);
+
+                }
+            }
+
 
             case  MotionEvent.ACTION_UP:{
 
@@ -99,4 +112,7 @@ public class SlidingMenu extends HorizontalScrollView {
 
         return super.onTouchEvent(ev);
     }
+
+
+
 }

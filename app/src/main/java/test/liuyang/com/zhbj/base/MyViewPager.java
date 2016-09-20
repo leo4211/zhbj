@@ -27,7 +27,7 @@ public class MyViewPager  extends ViewPager{
     public boolean onInterceptTouchEvent(MotionEvent p_event)
     {
 
-        return true;
+        return false;
     }
 
     private PointF sp = new PointF();

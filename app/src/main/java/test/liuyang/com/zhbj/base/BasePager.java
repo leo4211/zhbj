@@ -40,6 +40,7 @@ public class BasePager {
 
          fm_content = (FrameLayout) view.findViewById(R.id.fm_content);
 
+        initData();
         return  view;
 
     }

@@ -3,6 +3,7 @@ package test.liuyang.com.zhbj.impl;
 import android.app.Activity;
 import android.graphics.Color;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 
 import test.liuyang.com.zhbj.base.BasePager;
@@ -28,5 +29,7 @@ public class SettingsPager extends BasePager {
         fm_content.addView(view);
 
         tv_title.setText("設置");
+
+        img_menu.setVisibility(View.INVISIBLE);
     }
 }

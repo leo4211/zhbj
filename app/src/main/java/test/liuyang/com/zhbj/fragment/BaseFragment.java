@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import test.liuyang.com.zhbj.customview.SlidingMenu;
+
 /**
  * Created by Administrator on 2016/9/13.
  */
@@ -15,6 +17,7 @@ public abstract class BaseFragment extends Fragment {
 
 
     public Activity mActivity;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

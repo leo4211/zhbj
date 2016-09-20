@@ -3,6 +3,7 @@ package test.liuyang.com.zhbj.impl;
 import android.app.Activity;
 import android.graphics.Color;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 
 import test.liuyang.com.zhbj.base.BasePager;
@@ -27,7 +28,8 @@ public class SmartPager extends BasePager {
         view.setGravity(Gravity.CENTER);
         fm_content.addView(view);
 
-            tv_title.setText("智慧服務");
+        tv_title.setText("智慧服務");
+        img_menu.setVisibility(View.INVISIBLE);
 
     }
 }

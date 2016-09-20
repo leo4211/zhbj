@@ -3,6 +3,7 @@ package test.liuyang.com.zhbj.impl;
 import android.app.Activity;
 import android.graphics.Color;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 
 import test.liuyang.com.zhbj.base.BasePager;
@@ -14,6 +15,7 @@ public class HomePager extends BasePager {
     public HomePager(Activity activity) {
         super(activity);
     }
+
 
 
     @Override
@@ -29,6 +31,8 @@ public class HomePager extends BasePager {
 
 
         tv_title.setText("智慧北京");
+
+        img_menu.setVisibility(View.INVISIBLE);
 
     }
 }

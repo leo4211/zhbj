@@ -7,10 +7,12 @@
     >
 
    <test.liuyang.com.zhbj.customview.SlidingMenu
+       android:id="@+id/sl_01"
        android:layout_width="match_parent"
        android:layout_height="match_parent">
 
       <LinearLayout
+          android:id="@+id/ln_01"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:orientation="horizontal"
