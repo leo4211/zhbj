@@ -23,11 +23,13 @@ public class MyViewPager  extends ViewPager{
         super(context);
     }
 
+
+    // 事件拦截
     @Override
     public boolean onInterceptTouchEvent(MotionEvent p_event)
     {
 
-        return false;
+        return false;//false 的话不拦截
     }
 
     private PointF sp = new PointF();
