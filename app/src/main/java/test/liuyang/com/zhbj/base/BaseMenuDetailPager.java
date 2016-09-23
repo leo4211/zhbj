@@ -22,9 +22,9 @@ public abstract class BaseMenuDetailPager {
     public abstract View initView();
 
     // 初始化数据
-    public void initData() {
+    public   void initData(){
 
-    }
+    } ;
 
 
 }

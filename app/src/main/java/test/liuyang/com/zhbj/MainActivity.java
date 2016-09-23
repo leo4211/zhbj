@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import test.liuyang.com.zhbj.XhttpUtils.HttpUtlis;
 import test.liuyang.com.zhbj.customview.SlidingMenu;
 import test.liuyang.com.zhbj.fragment.ContentFragment;
 
@@ -25,12 +26,19 @@ public class MainActivity extends AppCompatActivity {
 //        setSupportActionBar(toolbar);
 //        toolbar.setMenu(toolbar,);
 
+
+
+
+
         content = (FrameLayout) findViewById(R.id.content);
 
         sdmenu = (SlidingMenu) findViewById(R.id.sl_01);
 
 
         initFragment();
+
+
+
     }
 
 

@@ -11,6 +11,7 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.RelativeLayout;
 
+import test.liuyang.com.zhbj.XhttpUtils.HttpUtlis;
 import test.liuyang.com.zhbj.utlis.PrefUtlis;
 
 /**
@@ -29,7 +30,8 @@ public class Splashctivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-
+        HttpUtlis httpUtlis=new HttpUtlis();
+        httpUtlis.getList();
         root = (RelativeLayout) findViewById(R.id.rl_root);
 
 
