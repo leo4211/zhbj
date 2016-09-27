@@ -14,6 +14,7 @@ import test.liuyang.com.zhbj.MainActivity;
 import test.liuyang.com.zhbj.R;
 import test.liuyang.com.zhbj.base.BasePager;
 import test.liuyang.com.zhbj.base.MyViewPager;
+import test.liuyang.com.zhbj.customview.SlidingMenu;
 import test.liuyang.com.zhbj.impl.GovaffPager;
 import test.liuyang.com.zhbj.impl.HomePager;
 import test.liuyang.com.zhbj.impl.NewsPager;
@@ -29,14 +30,18 @@ public class ContentFragment extends  BaseFragment {
     MyViewPager viewpager;
     private RadioGroup rgb;
 
+
+
+
     @Override
     public View initView() {
 
         final View view = LayoutInflater.from(mActivity).inflate(R.layout.contentfragment, null);
 
-        viewpager= (MyViewPager) view.findViewById(R.id.viewpager);
+        viewpager= (MyViewPager) view.findViewById(R.id.mviewpager);
 
         rgb = (RadioGroup) view.findViewById(R.id.rgb);
+
 
 
         rgb.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

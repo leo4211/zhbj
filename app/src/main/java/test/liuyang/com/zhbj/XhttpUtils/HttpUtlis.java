@@ -23,9 +23,10 @@ public class HttpUtlis {
         RequestParams params=new RequestParams("https://route.showapi.com/170-48");
 //        https://route.showapi.com/170-48?showapi_appid=18603&showapi_timestamp=20160922171051&showapi_sign=55e2a42d1183b1953fcf58dac9d8da4a
 //        https://route.showapi.com/170-48?showapi_appid=18603&showapi_timestamp=20160923160926&showapi_sign=69e97cd4dfaeb70cc85b0d8a98e84655
+//        https://route.showapi.com/170-48?showapi_appid=18603&showapi_timestamp=20160927090304&showapi_sign=4dddc9ef8ea9e1e08144b8f98af2d060
         params.addBodyParameter("showapi_appid",String.valueOf(18603));
         params.addBodyParameter("showapi_timestamp","");
-        params.addBodyParameter("showapi_sign","69e97cd4dfaeb70cc85b0d8a98e84655");
+        params.addBodyParameter("showapi_sign","56fed733351ff1d8655a4ff57ca7a736");
 
 
         x.http().post(params, new Callback.CommonCallback<String>() {

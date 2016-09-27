@@ -1,6 +1,7 @@
 package test.liuyang.com.zhbj.customview;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -58,13 +59,27 @@ public class SlidingMenu extends HorizontalScrollView {
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
 
+        System.out.println("触发了数据的改变");
+
         if (changed){
+
+            System.out.println(mMenuwidth+"========拉长的距离=====");
 
             this.scrollTo(mMenuwidth,0);
 
         }
 
     }
+
+
+    @Override
+    public boolean onInterceptHoverEvent(MotionEvent event) {
+
+        System.out.println("滑动拦截=====");
+        return false;
+    }
+
+
 
 
     @Override
@@ -108,6 +123,8 @@ public class SlidingMenu extends HorizontalScrollView {
 
 
         }
+
+
 
 
         return super.onTouchEvent(ev);

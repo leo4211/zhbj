@@ -10,7 +10,9 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import test.liuyang.com.zhbj.R;
 import test.liuyang.com.zhbj.base.BasePager;
+import test.liuyang.com.zhbj.customview.SlidingMenu;
 import test.liuyang.com.zhbj.impl.menu.NewsMenuDetail;
 import test.liuyang.com.zhbj.impl.menu.TabDetailPager;
 
@@ -21,6 +23,10 @@ public class NewsPager extends BasePager {
     public NewsPager(Activity activity) {
         super(activity);
     }
+
+    private SlidingMenu sd;
+    boolean  flag;
+
 
     @Override
     public View initView() {
@@ -43,9 +49,9 @@ public class NewsPager extends BasePager {
 
 //        TabDetailPager tp=new TabDetailPager(mActiviy);
 
-        fm_content.removeAllViews();
+//        fm_content.removeAllViews();
 
-        NewsMenuDetail  detail=new NewsMenuDetail(mActiviy);
+        NewsMenuDetail detail = new NewsMenuDetail(mActiviy);
 
         View view = detail.initView();
 
@@ -54,6 +60,34 @@ public class NewsPager extends BasePager {
 
         tv_title.setText("新聞中心");
 
+        img_menu.setOnClickListener(new View.OnClickListener() {
+
+
+
+            @Override
+            public void onClick(View view) {
+
+                if(!flag){
+                    System.out.println("触发了啊=====");
+                    sd = (SlidingMenu) mActiviy.findViewById(R.id.sl_01);
+
+                    sd.smoothScrollTo(0,0);
+
+//                    sd.invalidate();
+
+                    flag=true;
+                }else{
+
+
+                    sd.scrollTo(520,0);
+                    flag=false;
+
+                }
+
+
+
+            }
+        });
 
     }
 }

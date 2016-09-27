@@ -18,6 +18,8 @@ public abstract class BaseFragment extends Fragment {
 
     public Activity mActivity;
 
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

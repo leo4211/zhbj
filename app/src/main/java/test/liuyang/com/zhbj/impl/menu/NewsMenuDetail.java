@@ -20,6 +20,7 @@ import java.util.List;
 import test.liuyang.com.zhbj.R;
 import test.liuyang.com.zhbj.XhttpUtils.HttpUtlis;
 import test.liuyang.com.zhbj.base.BaseMenuDetailPager;
+import test.liuyang.com.zhbj.customview.NewsViewpager;
 import test.liuyang.com.zhbj.pojo.area;
 
 /**
@@ -28,7 +29,7 @@ import test.liuyang.com.zhbj.pojo.area;
 public class NewsMenuDetail extends BaseMenuDetailPager{
 
 
-    public ViewPager pager;
+    public NewsViewpager pager;
 
     private List<area> alist;
 
@@ -46,7 +47,7 @@ public class NewsMenuDetail extends BaseMenuDetailPager{
         View view = View.inflate(mActivity, R.layout.pager_news_details,null);
 
 
-        pager = (ViewPager) view.findViewById(R.id.pager_news_menu);
+        pager = (NewsViewpager) view.findViewById(R.id.pager_news_menu);
 
         initData();
         return view;
@@ -81,6 +82,8 @@ public class NewsMenuDetail extends BaseMenuDetailPager{
 
             @Override
             public boolean isViewFromObject(View view, Object object) {
+
+                System.out.println("显示数据");
                 return view==object;
             }
 
@@ -88,6 +91,8 @@ public class NewsMenuDetail extends BaseMenuDetailPager{
             @Override
             public Object instantiateItem(ViewGroup container, int position) {
 
+
+                System.out.println("执行了么");
                 TabDetailPager pager = tlist.get(position);
 
                 View view = pager.initView();
@@ -106,6 +111,9 @@ public class NewsMenuDetail extends BaseMenuDetailPager{
 
             }
         });
+
+        System.out.println(tlist.size()+"=========最后测试数据==========");
+
 
 
     }

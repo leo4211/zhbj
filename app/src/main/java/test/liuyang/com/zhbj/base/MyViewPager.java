@@ -29,6 +29,7 @@ public class MyViewPager  extends ViewPager{
     public boolean onInterceptTouchEvent(MotionEvent p_event)
     {
 
+        System.out.println("事件拦截===========");
         return false;//false 的话不拦截
     }
 
@@ -36,22 +37,22 @@ public class MyViewPager  extends ViewPager{
     @Override
     public boolean onTouchEvent(MotionEvent arg0) {
         // TODO Auto-generated method stub
-//        int action = arg0.getAction();
-//        switch (action){
-//            case MotionEvent.ACTION_DOWN:
-//                sp = new PointF(arg0.getX(), arg0.getY());
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//                PointF ep = new PointF(arg0.getX(), arg0.getY());
-//                float move_x = sp.x - ep.x;
-//                if(!(move_x < 0 && getCurrentItem() == 0) && getParent() != null
-//                        && !(move_x > 0 && getCurrentItem() == getAdapter().getCount() - 1)
-//                        && sp.x > 50){
-//                    Log.i("DEBUG", "intercept move event");
-//                    getParent().requestDisallowInterceptTouchEvent(true);
-//                }
-//
-//        }
+        int action = arg0.getAction();
+        switch (action){
+            case MotionEvent.ACTION_DOWN:
+                sp = new PointF(arg0.getX(), arg0.getY());
+                break;
+            case MotionEvent.ACTION_MOVE:
+                PointF ep = new PointF(arg0.getX(), arg0.getY());
+                float move_x = sp.x - ep.x;
+                if(!(move_x < 0 && getCurrentItem() == 0) && getParent() != null
+                        && !(move_x > 0 && getCurrentItem() == getAdapter().getCount() - 1)
+                        && sp.x > 50){
+                    Log.i("DEBUG", "intercept move event");
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+
+        }
 
         return true;
     }
